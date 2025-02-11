@@ -6,30 +6,35 @@ This project is a FastAPI application designed for scraping URLs from a CSV file
 
 ```
 fastapi-scraper
-├── app
+│── app/
 │   ├── __init__.py
+│   ├── auth.py
+│   ├── celery.py
+│   ├── config.py
+│   ├── crud.py
+│   ├── database.py
 │   ├── main.py
 │   ├── models.py
 │   ├── schemas.py
-│   ├── crud.py
-│   ├── celery_worker.py
 │   ├── tasks.py
-│   └── config.py
-├── docker-compose.yml
-├── Dockerfile
-├── requirements.txt
-└── README.md
+│── .env
+│── docker-compose.yml
+│── Dockerfile
+│── requirements.txt
+│── README.md
 ```
 
 ## Setup Instructions
 
 1. **Clone the repository:**
+
    ```
    git clone <repository-url>
    cd fastapi-scraper
    ```
 
 2. **Build and run the application using Docker Compose:**
+
    ```
    docker-compose up --build
    ```
