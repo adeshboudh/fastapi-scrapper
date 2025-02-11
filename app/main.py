@@ -54,13 +54,14 @@ def upload_csv(file: UploadFile = File(...), db: Session = Depends(get_db), curr
 
 @app.get("/status/{task_id}", response_model=schemas.Task)
 def get_status(task_id: int, db: Session = Depends(get_db), current_user: schemas.User = Depends(auth.get_current_user)):
-    task = crud.get_task(db=db, task_id=task_id)
+    task = crud.get_task_result(db=db, task_id=task_id)
     if task is None:
         raise HTTPException(status_code=404, detail="Task not found")
     return task
 
 @app.get("/results/{task_id}")
 def get_results(task_id: int, db: Session = Depends(get_db), current_user: schemas.User = Depends(auth.get_current_user)):
+
     task = crud.get_task(db=db, task_id=task_id)
     if task is None:
         raise HTTPException(status_code=404, detail="Task not found")

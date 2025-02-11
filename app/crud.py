@@ -28,6 +28,9 @@ def create_task(db: Session):
 def get_task(db: Session, task_id: int):
     return db.query(models.TaskResult).filter(models.TaskResult.task_id == task_id).first()
 
+def get_task_result(db: Session, task_id: int):
+    return db.query(models.Task).filter(models.Task.id == task_id).first()
+
 def create_task_result(db: Session, task_id: int, result: schemas.TaskResult):
     db_result = models.TaskResult(**result.dict(), task_id=task_id)
     db.add(db_result)
