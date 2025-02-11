@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+redis
+celery
+pydantic
+pydantic-settings
+requests
+beautifulsoup4
+python-multipart
+passlib[bcrypt]
+python-jose
+bcrypt==3.2.0
