@@ -4,10 +4,17 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from . import models, schemas, crud, config, database, auth
 from .tasks import scrape_urls
+import time
+from prometheus_fastapi_instrumentator import Instrumentator
+
 
 models.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI()
+
+# Prometheus instrumentation
+Instrumentator().instrument(app).expose(app)
+
 
 # Dependency to get the database session
 def get_db():
