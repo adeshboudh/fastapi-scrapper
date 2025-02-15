@@ -20,6 +20,7 @@ fastapi-scraper
 │── .env
 │── docker-compose.yml
 │── Dockerfile
+│── prometheus.yml
 │── requirements.txt
 │── README.md
 ```
@@ -45,6 +46,12 @@ fastapi-scraper
 4. **API Documentation:**
    The interactive API documentation can be found at `http://localhost:8000/docs`.
 
+5. **Prometheus Metrics:**
+   Prometheus metrics are exposed at `http://localhost:9090`.
+
+6. **Grafana Dashboards:**
+   Access Grafana dashboards at `http://localhost:3000`.
+
 ## Usage
 
 - Place your CSV file containing URLs in the designated directory.
@@ -58,6 +65,8 @@ This project requires the following Python packages:
 - SQLAlchemy
 - Redis
 - Celery
+- prometheus-client
+- prometheus-fastapi-instrumentator
 
 These dependencies are listed in the `requirements.txt` file.
 

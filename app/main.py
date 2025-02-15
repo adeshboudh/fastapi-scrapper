@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from . import models, schemas, crud, config, database, auth
 from .tasks import scrape_urls
 import time
-from prometheus_fastapi_instrumentator import Instrumentator
+from prometheus_fastapi_instrumentator import Instrumentator # type: ignore
 
 
 models.Base.metadata.create_all(bind=database.engine)
