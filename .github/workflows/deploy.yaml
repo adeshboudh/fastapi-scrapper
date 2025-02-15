@@ -21,7 +21,7 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_PUBLIC_IP }} << 'EOF'
-          cd fastapi-scraper
+          cd fastapi-scrapper
           git pull origin main
           docker compose down
           docker compose build
